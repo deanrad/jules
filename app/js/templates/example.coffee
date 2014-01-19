@@ -1,0 +1,2 @@
+define [], -> ({title})->
+  div "#{title}"

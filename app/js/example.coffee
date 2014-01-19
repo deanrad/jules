@@ -1,0 +1,2 @@
+define [], ->
+  coolestNumber: 42

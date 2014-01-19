@@ -1,0 +1,21 @@
+{
+  "name": "jules",
+  "version": "0.0.1",
+  "dependencies": {
+    "bootstrap": "3.0.3",
+    "chai": "~1.8.1",
+    "jquery": "1.10.2",
+    "mocha": "~1.16.2",
+    "reactive-coffee": "~0.0.2",
+    "requirejs": "~2.1.9",
+    "require-cs": "~0.4.4",
+    "require-css": "~0.1.1",
+    "requirejs-plugins": "~1.0.2",
+    "require-handlebars-plugin": "~0.7.0",
+    "requirejs-domready": "~2.0.1",
+    "requirejs-text": "~2.0.10",
+    "underscore": ">=1.4.4",
+    "underscore.string": "~2.3.3"
+  }
+}
+

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mocha Tests - Jules</title>
+
+  <link rel="stylesheet" href="/bower_components/mocha/mocha.css" />
+
+</head>
+<body>
+  <div id="mocha"></div>
+  <div id="test"></div>
+
+  <script src="/bower_components/jquery/jquery.min.js"></script>
+  <script src="/bower_components/chai/chai.js"></script>
+  <script src="/bower_components/mocha/mocha.js"></script>
+  <script>
+    window.expect = chai.expect;
+    mocha.setup('bdd');
+  </script>
+
+  <script src="/js/requirejs-config.js"></script>
+  <script data-main="test-runner" 
+    src="bower_components/requirejs/require.js"
+    data-alt-path="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.9/require.min.js"></script>
+  <!-- livereload snippet -->
+  <script src="http://localhost:35729/livereload.js"></script>
+</body>
+</html>
