@@ -23,7 +23,7 @@
   },
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha -R spec app/test-runner.js",
-    "start": "http-server app/"
+    "start": "grunt server"
   },
   "engines": {
     "node": ">=0.8.0"
