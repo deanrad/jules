@@ -1,4 +1,4 @@
-define ['coffee!js/jules/views/worldWindow'], (window) ->
-  describe 'Window', ->
+define ['coffee!js/jules/views/worldWindow'], (world) ->
+  describe 'Jules Window on the world', ->
     it 'should have a header', ->
-      expect(window.length).to.eq(-1)
+      expect(world.find("h2").length).to.eq(1)

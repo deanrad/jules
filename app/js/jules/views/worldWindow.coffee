@@ -1,2 +1,4 @@
 define ['coffee!js/jules/main'], (Jules) ->
-  h2 "Jules"
+  div {class: 'jules-world'}, [
+    h2 "Jules"
+  ]
