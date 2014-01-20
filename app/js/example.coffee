@@ -1,2 +1,0 @@
-define [], ->
-  coolestNumber: 42

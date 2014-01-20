@@ -52,7 +52,8 @@ module.exports = function (grunt) {
           'app/*.html',
           'app/css/*.*',
           'app/js/**/*.coffee',
-          'app/js/**/*.js'
+          'app/js/**/*.js',
+          'app/test-runner.js'
         ],
         tasks: ['build', 'mochaTest']
       }

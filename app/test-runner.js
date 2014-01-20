@@ -2,7 +2,9 @@
 
 /* These tests are the 'dependencies' of mocha.run() and so add yours accordingly */
 var all_tests = [
-  'coffee!js/test/example'
+  'reactive-cofee',
+  'coffee!js/test/jules/main',
+  'coffee!js/test/jules/views/worldWindow'
 ];
 
 /* In the browser, we load the config as 'var require', then requirejs picks it up.
@@ -31,6 +33,7 @@ if(typeof window === "undefined"){
 }
 
 requirejs(all_tests, function(){
+  rxt.importTags();
   if (typeof mocha !== 'undefined') {
     mocha.run();
   }
