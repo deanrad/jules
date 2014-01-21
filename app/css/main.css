@@ -2,3 +2,6 @@
 body{
   padding-top: 50px;
 }
+.current-cycle * {
+  display: inline-block;
+}

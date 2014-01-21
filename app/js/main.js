@@ -3,10 +3,13 @@ var deps=["jquery", "underscore", "underscore.string", "coffee-script", "reactiv
 console.log("Loading up " + deps.join(","));
 requirejs(deps, function(){
   rxt.importTags();
+  bind = rx.bind;
   //_.mixin(_.str.exports())
 });
 
-require(["domReady!", "jquery", "coffee!js/jules/views/worldWindow"], function(doc, $, world){
+require(["domReady!", 
+        "jquery",
+        "coffee!js/jules/views/worldWindow"], function(doc, $, world){
   console.log("The dom will see you now");
-  $("#jules-window").append( world );
+  $('#jules-window').append(world.ui);
 });
