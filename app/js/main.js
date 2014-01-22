@@ -9,7 +9,7 @@ requirejs(deps, function(){
 
 require(["domReady!", 
         "jquery",
-        "coffee!js/jules/views/worldWindow"], function(doc, $, world){
+        "coffee!js/jules/views/world"], function(doc, $, world){
   console.log("The dom will see you now");
   $('#jules-window').append(world.ui);
 });

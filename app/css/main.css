@@ -2,6 +2,13 @@
 body{
   padding-top: 50px;
 }
+
 .current-cycle * {
   display: inline-block;
+  font-weight: bold;
+}
+
+.current-event {
+  background-color: #bbb;
+  color: white;
 }

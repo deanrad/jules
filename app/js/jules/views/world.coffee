@@ -1,6 +1,6 @@
-define ['coffee!js/jules/world'], (Jules) ->
+define ['coffee!js/jules/jules'], (Jules) ->
   _interval = null
-
+  window.Jules = Jules
   w = {
     timer: 
       start: (-> _interval = setInterval( (->console.log('tick')), 1000/(w.tempo/60)))
@@ -11,8 +11,8 @@ define ['coffee!js/jules/world'], (Jules) ->
       a {click: -> w.timer.start() }, "Start"
       a {click: -> w.timer.stop() }, "Stop"
       div {class: 'current-cycle'}, Jules.current_cycle.map (evt)->
-        pwidth = 100/Jules.current_cycle.length
-        div {class: 'event', style: "width: #{pwidth}%"}, evt.handedness
+        pwidth = rx.bind -> 100/Jules.current_cycle.length()
+        div {class: 'event', style: rx.bind -> "width: #{pwidth.get()}%"}, rx.bind -> evt.handedness
     ]
   }
 

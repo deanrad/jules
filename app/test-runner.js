@@ -2,8 +2,16 @@
 
 /* These tests are the 'dependencies' of mocha.run() and so add yours accordingly */
 var all_tests = [
-  'coffee!js/test/jules/world'
+  'coffee!js/test/jules/jules'
 ];
+var browser_tests = [
+  'coffee!js/test/jules/views/world'
+]
+
+if(typeof window === "object"){
+  all_tests = all_tests.concat(browser_tests);
+  rxt.importTags();
+}
 
 /* In the browser, we load the config as 'var require', then requirejs picks it up.
    In node, loading is trickier, and repurposing the config that works for the browser
@@ -28,13 +36,6 @@ if(typeof window === "undefined"){
     map: rconfig.map
   };
   requirejs.config(node_rjsconf);
-}
-
-if(typeof window === "object"){
-  all_tests = all_tests.concat([
-    'coffee!js/test/jules/views/worldWindow'
-  ]);
-  rxt.importTags();
 }
 
 requirejs(all_tests, function(){
