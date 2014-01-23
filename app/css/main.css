@@ -7,6 +7,10 @@ body{
   margin: 8px;
 }
 
+.current-cycle {
+  border: 1px solid black;
+}
+
 .current-cycle * {
   display: inline-block;
   font-weight: bold;
