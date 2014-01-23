@@ -3,12 +3,27 @@ body{
   padding-top: 50px;
 }
 
+.jules-world a {
+  margin: 8px;
+}
+
 .current-cycle * {
   display: inline-block;
   font-weight: bold;
+  text-align: center;
+  line-height: 40px;
+  height: 40px;
+}
+
+.current-cycle .event:nth-child(odd) {
+  background-color: #fff;
+}
+
+.current-cycle .event:nth-child(even) {
+  background-color: #eee;
 }
 
 .current-event {
-  background-color: #bbb;
-  color: white;
+  background-color: #333 !important;
+  color: white !important;
 }
