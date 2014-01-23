@@ -1,12 +1,14 @@
 // Generated on 2014-01-19 using generator-deanhtml5 0.3.5
 'use strict';
 var LIVERELOAD_PORT = 35729;
-var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});
-var mountFolder = function (connect, dir) {
+var lrSnippet = require('connect-livereload')({
+  port: LIVERELOAD_PORT
+});
+var mountFolder = function(connect, dir) {
   return connect.static(require('path').resolve(dir));
 };
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
   // load all grunt tasks
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
@@ -38,6 +40,13 @@ module.exports = function (grunt) {
         }
       }
     },
+    sass: {
+      dist: {
+        files: {
+          'app/css/application.css': 'app/sass/application.scss'
+        }
+      }
+    },
     watch: {
       options: {
         nospawn: true,
@@ -46,6 +55,10 @@ module.exports = function (grunt) {
       jshint: {
         files: ['app/js/**/*.js'],
         tasks: ['jshint']
+      },
+      css: {
+        files: '**/*.scss',
+        tasks: ['sass']
       },
       livereload: {
         files: [
@@ -66,7 +79,7 @@ module.exports = function (grunt) {
       },
       livereload: {
         options: {
-          middleware: function (connect) {
+          middleware: function(connect) {
             return [
               lrSnippet,
               mountFolder(connect, './app')
@@ -95,23 +108,24 @@ module.exports = function (grunt) {
 
   grunt.registerTask('server', ['build', 'connect:livereload', 'open', 'watch']);
 
-  grunt.registerTask('build', 'Build your app.', function () {
+  grunt.registerTask('build', 'Build your app.', function() {
     console.log("Implement your custom build step here");
   });
 
-  grunt.registerTask('cdnify', 'Toggle scripts/css to work online or offline', function(){
+  grunt.registerTask('cdnify', 'Toggle scripts/css to work online or offline', function() {
     var fs = require("fs");
 
     var filePath = "index.html";
     var filePathNew = filePath;
 
-    function cdnify(contents){
+    function cdnify(contents) {
       //quick-n-dirty version, requires src|href to be adjacent to data-alt-path in markup
-      return contents.replace( /(src|href)="([^"]+)"([\s]+)data-alt-path="([^"]+)"/gm, '$1="$4"$3data-alt-path="$2"' );
+      return contents.replace(/(src|href)="([^"]+)"([\s]+)data-alt-path="([^"]+)"/gm, '$1="$4"$3data-alt-path="$2"');
     }
-    function cdnifyRequire(contents){
+
+    function cdnifyRequire(contents) {
       //for paths in requirejs such as 'jquery/jquery.min', /*data-alt-path="//code.jquery.com/jquery-1.10.2.min.js"*/
-      return contents.replace( /:\s?"(.*?)"(,?) \/\*data-alt-path="(.*)"/gm, ': "$3"$2 /*data-alt-path="$1"' );
+      return contents.replace(/:\s?"(.*?)"(,?) \/\*data-alt-path="(.*)"/gm, ': "$3"$2 /*data-alt-path="$1"');
     }
 
     var contents = fs.readFileSync(filePath, 'utf-8');
