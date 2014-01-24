@@ -23,7 +23,7 @@ var require={
   shim: {
     "bootstrap": ["jquery"],
     "reactive-coffee": {
-      deps: ["jquery"],
+      deps: ["jquery", "underscore", "underscore.string"],
       exports: "rx"
     },
     "underscore": {

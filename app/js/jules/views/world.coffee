@@ -32,6 +32,7 @@ define ['coffee!js/jules/jules'], (Jules) ->
   ]
 
   w = {
+    tempo: _tempo
     timer: 
       start: (-> _interval = setTimeout(doTick, 1000/(_tempo.get()/60)))
       stop: (-> clearTimeout(_interval) || console.log('stopped timer'))

@@ -2,9 +2,9 @@
 
 /* These tests are the 'dependencies' of mocha.run() and so add yours accordingly */
 var all_tests = [
-  'coffee!js/test/jules/jules'
 ];
 var browser_tests = [
+  'coffee!js/test/jules/jules',
   'coffee!js/test/jules/views/world'
 ]
 
