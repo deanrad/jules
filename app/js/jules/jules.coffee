@@ -1,4 +1,4 @@
-define [], ->
+define [], () ->
   events = rx.array([
     duration: 1
     handedness: 'R'
@@ -8,9 +8,12 @@ define [], ->
    ,
     duration: 1
     handedness: 'R'
+    accent: true
    ,
     duration: 1
     handedness: 'L'
+    accent: true
   ])
 
-  current_cycle: events
+  Jules = 
+    current_cycle: events

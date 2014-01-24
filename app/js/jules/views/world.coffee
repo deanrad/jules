@@ -1,4 +1,4 @@
-define ['coffee!js/jules/jules'], (Jules) ->
+define ['coffee!js/jules/jules', 'coffee!js/jules/events'], (Jules, Events) ->
   _current_event = rx.cell(0)
   _tempo = rx.cell(80)
 
@@ -37,7 +37,7 @@ define ['coffee!js/jules/jules'], (Jules) ->
       event_atts = 
         class: refresh -> "event " + if _current_event.get()==idx then "current-event" else ""
         style: refresh -> "width: #{pwidth.get()}%"
-      div event_atts, refresh -> evt.handedness
+      div event_atts, refresh -> Events.render(evt)
   ]
 
   w = {
