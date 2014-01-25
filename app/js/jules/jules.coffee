@@ -17,3 +17,4 @@ define [], () ->
 
   Jules = 
     current_cycle: events
+    current_factors: ["Generator (R/L)", "Filter (Accents)[2]"]

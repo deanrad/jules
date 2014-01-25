@@ -1,6 +1,7 @@
 define [
   'coffee!js/jules/jules',
-  'coffee!js/templates/world-ui'], (Jules, ui) ->
+  'coffee!js/templates/world-ui',
+  'coffee!js/templates/factors-ui'], (Jules, WorldUi, FactorsUi) ->
   current_event = rx.cell(0)
   tempo = rx.cell(80)
   current_cycle = Jules.current_cycle
@@ -19,4 +20,7 @@ define [
     implTick()
     interval = setTimeout doTick, 1000/(tempo.get()/60)
 
-  ui.create(tempo, timer, current_event, current_cycle)
+  div [
+    WorldUi.create(tempo, timer, current_event, current_cycle)
+    FactorsUi.create()
+  ]
