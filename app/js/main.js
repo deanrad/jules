@@ -11,5 +11,5 @@ require(["domReady!",
         "jquery",
         "coffee!js/jules/views/world"], function(doc, $, world){
   console.log("The dom will see you now");
-  $('#jules-window').append(world.ui);
+  $('#jules-window').append(world);
 });
