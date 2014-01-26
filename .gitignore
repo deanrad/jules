@@ -2,4 +2,3 @@ app/bower_components
 node_modules/
 dist
 .sass-cache
-app/css/application.css
