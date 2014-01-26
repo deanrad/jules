@@ -1,7 +1,10 @@
 {
   "name": "Jules",
   "version": "0.0.2",
-  "repository": "https://github.com/chicagogrooves/jules.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chicagogrooves/jules.git"
+  },
   "dependencies": {},
   "devDependencies": {
     "bower": "~1.2.0",
@@ -25,9 +28,9 @@
   },
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha -R spec app/test-runner.js",
-    "start": "http-server app/"
+    "start": "node web.js"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": "~0.10.0"
   }
 }
