@@ -1,6 +1,7 @@
 {
-  "name": "your-title-here",
-  "version": "0.0.1",
+  "name": "Jules",
+  "version": "0.0.2",
+  "repository": "https://github.com/chicagogrooves/jules.git",
   "dependencies": {},
   "devDependencies": {
     "bower": "~1.2.0",
@@ -24,9 +25,9 @@
   },
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha -R spec app/test-runner.js",
-    "start": "grunt server"
+    "start": "http-server app/"
   },
   "engines": {
-    "node": ">=0.8.0"
+    "node": ">=0.10.0"
   }
 }
