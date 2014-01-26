@@ -5,7 +5,9 @@
     "type": "git",
     "url": "https://github.com/chicagogrooves/jules.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "express" : "~3.4.8"
+  },
   "devDependencies": {
     "bower": "~1.2.0",
     "chai": "~1.8.1",
