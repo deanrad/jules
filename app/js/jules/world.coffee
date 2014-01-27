@@ -5,6 +5,7 @@ define [
   current_event = rx.cell(0)
   tempo = rx.cell(80)
   current_cycle = Jules.current_cycle
+  factors = Jules.current_factors
 
   interval = null
   timer =
@@ -22,5 +23,5 @@ define [
 
   div [
     WorldUi.create(tempo, timer, current_event, current_cycle)
-    FactorsUi.create()
+    FactorsUi.create(factors)
   ]

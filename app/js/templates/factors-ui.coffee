@@ -1,7 +1,7 @@
-define ['coffee!js/jules/jules'], (Jules) ->
-  create: () ->
+define [], () ->
+  create: (factors) ->
     div [
       h3 'Factors:'
-      ul {class: 'sortable'}, Jules.current_factors.map (factor) ->
+      ul {class: 'sortable'}, factors.map (factor) ->
         li factor
     ]
