@@ -5,7 +5,7 @@ var all_tests = [
 ];
 var browser_tests = [
   'coffee!js/test/jules/jules',
-  'coffee!js/test/jules/views/world'
+  'coffee!js/test/jules/world'
 ]
 
 if(typeof window === "object"){

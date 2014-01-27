@@ -16,7 +16,9 @@ define ['coffee!js/jules/events'], (Events) ->
       div {class: 'current-cycle'}, current_cycle.map (evt, idx)->
         pwidth = refresh -> 100/current_cycle.length()
         event_atts =
-          class: refresh -> "event " + if current_event.get()==idx then "current-event" else ""
+          class: refresh -> 
+            (if current_event.get()==idx then "current-event " else "") +
+            Events.classes(evt)
           style: refresh -> "width: #{pwidth.get()}%"
-        div event_atts, refresh -> Events.render(evt)
+        div event_atts, refresh -> Events.content(evt)
     ]

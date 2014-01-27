@@ -19,11 +19,11 @@ body{
   height: 40px;
 }
 
-.current-cycle .event:nth-child(odd) {
+.current-cycle div:nth-child(odd) {
   background-color: #fff;
 }
 
-.current-cycle .event:nth-child(even) {
+.current-cycle div:nth-child(even) {
   background-color: #eee;
 }
 

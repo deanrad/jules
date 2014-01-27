@@ -1,4 +1,4 @@
-define ['coffee!js/jules/views/world'], (world) ->
+define ['coffee!js/jules/world'], (world) ->
   describe 'Jules World', ->
     it 'should have a timer with start/stop methods'
 

@@ -12,5 +12,9 @@ define [], () ->
         str = t.call(str, data)
       str
 
-  render: (evt) ->
+
+  classes: (evt) ->
+    ("#{p}-#{v}" for p,v of evt).join(' ')
+
+  content: (evt) ->
     bonsai(evt, renderers...)

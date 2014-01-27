@@ -5,7 +5,7 @@ define [
   current_event = rx.cell(0)
   tempo = rx.cell(80)
   current_cycle = Jules.current_cycle
-  
+
   interval = null
   timer =
     start: (-> interval = setTimeout(doTick, 1000/(tempo.get()/60)))

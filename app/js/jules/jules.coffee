@@ -1,20 +1,28 @@
 define [], () ->
   events = rx.array([
-    duration: 1
-    handedness: 'R'
+    rx.array([
+      duration: 0.5
+      handedness: 'R'
+     ,
+      duration: 0.5
+      handedness: 'R'
+     ,
+      duration: 0.5
+      handedness: 'R'
+     ,
+      duration: 0.5
+      handedness: 'R'
+    ])
    ,
-    duration: 1
-    handedness: 'L'
-   ,
-    duration: 1
-    handedness: 'R'
-    accent: true
-   ,
-    duration: 1
-    handedness: 'L'
-    accent: true
+    rx.array([
+      duration: 1
+      rest: true
+     ,
+      duration: 1
+      handedness: 'L'
+    ])
   ])
 
   Jules = 
-    current_cycle: events
+    current_cycle: events.at(0)
     current_factors: ["Generator (R/L)", "Filter (Accents)[2]"]
