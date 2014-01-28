@@ -4,17 +4,19 @@ define [
   'coffee!js/templates/factors-ui'], (Jules, WorldUi, FactorsUi) ->
   current_event = rx.cell(0)
   tempo = rx.cell(80)
+
+  cycle_length = Jules.cycle_length
   current_cycle = Jules.current_cycle
   factors = Jules.current_factors
 
   interval = null
   timer =
     start: (-> interval = setTimeout(doTick, 1000/(tempo.get()/60)))
-    stop: (-> clearTimeout(interval) || console.log('stopped timer'))
+    stop: (-> clearTimeout(interval))
 
   implTick = ->
     i = current_event.get()
-    newidx = if i==current_cycle.length()-1 then 0 else i+1
+    newidx = if i==cycle_length-1 then 0 else i+1
     current_event.set(newidx)
 
   doTick = ->
@@ -22,6 +24,6 @@ define [
     interval = setTimeout doTick, 1000/(tempo.get()/60)
 
   div [
-    WorldUi.create(tempo, timer, current_event, current_cycle)
+    WorldUi.create(tempo, timer, current_event, current_cycle, cycle_length)
     FactorsUi.create(factors)
   ]

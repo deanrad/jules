@@ -13,8 +13,10 @@ define [], () ->
       str
 
 
-  classes: (evt) ->
-    ("#{p}-#{v}" for p,v of evt).join(' ')
+  classes: (evt, current) ->
+    [if evt.elapsed==current then "current-event " else ""]
+      .concat("#{p}-#{v}" for p,v of evt)
+      .join(' ')
 
   content: (evt) ->
     bonsai(evt, renderers...)
