@@ -24,5 +24,8 @@ define [], () ->
   ])
 
   Jules = 
+    current_factors: [
+      ["Repeat (R)", "Double"]
+      ["Repeat (L)", "Space 1:2", "Shift 2:4"]
+    ]
     current_cycle: events.at(0)
-    current_factors: ["Generator (R/L)", "Filter (Accents)[2]"]

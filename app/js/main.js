@@ -1,5 +1,5 @@
 /*globals rxt:false, exports:false */
-var deps=["jquery", "jquery.sortable", "underscore", "underscore.string", "coffee-script", "reactive-coffee", "bootstrap", "css!bootstrap-css", "css!/css/application", "css!/css/main"];
+var deps=["jquery", "jquery.sortable", "underscore", "underscore.string", "coffee-script", "reactive-coffee", "bootstrap", "css!/css/application", "css!/css/main"];
 console.log("Loading up " + deps.join(","));
 requirejs(deps, function(){
   rxt.importTags();
