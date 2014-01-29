@@ -4,6 +4,7 @@ define [], () ->
   renderers = [
     ({handedness}) -> @+handedness
     ({accent}) -> @+(if accent? then '´' else '')
+    ({rest}) -> if rest? then "-" else @
   ]
 
   bonsai = (data, templates...) ->

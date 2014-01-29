@@ -12,7 +12,8 @@ define [
   interval = null
   timer =
     start: (-> interval = setTimeout(doTick, 1000/(tempo.get()/60)))
-    stop: (-> clearTimeout(interval))
+    stop: (-> interval = clearTimeout(interval) )
+    toggle: (-> if interval? then @stop() else @start() )
 
   implTick = ->
     i = current_event.get()
@@ -23,7 +24,8 @@ define [
     implTick()
     interval = setTimeout doTick, 1000/(tempo.get()/60)
 
-  div [
+  timer: timer
+  ui: div [
     WorldUi.create(tempo, timer, current_event, current_cycle, cycle_length)
     FactorsUi.create(factors)
   ]

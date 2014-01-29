@@ -9,8 +9,13 @@ requirejs(deps, function(){
 
 require(["domReady!", 
         "jquery",
-        "coffee!js/jules/world"], function(doc, $, world){
+        "jwerty",
+        "coffee!js/jules/world"], function(doc, $, jwerty, world){
+  jwerty.key("space", world.timer.toggle, world.timer)
+
   console.log("The dom will see you now");
-  $('#jules-window').append(world);
+  $('#jules-window').append(world.ui);
   $('.sortable').sortable();
 });
+
+

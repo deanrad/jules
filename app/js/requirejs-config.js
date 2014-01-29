@@ -7,6 +7,7 @@ var require={
     /* CSS */
     "bootstrap-css": "bower_components/bootstrap/dist/css/bootstrap.min", /*data-alt-path="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min"*/
     /* JS */
+    "jwerty": "js/vendor/jwerty.min",
     "jquery": "bower_components/jquery/jquery.min", /*data-alt-path="//code.jquery.com/jquery-1.10.2.min"*/
     "bootstrap": "bower_components/bootstrap/dist/js/bootstrap.min", /*data-alt-path="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min"*/
     "underscore": "bower_components/underscore/underscore-min", /*data-alt-path="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"*/
@@ -23,6 +24,7 @@ var require={
   },
   shim: {
     "bootstrap": ["jquery"],
+    "jquery.sortable": ["jquery"],
     "reactive-coffee": {
       deps: ["jquery", "underscore", "underscore.string"],
       exports: "rx"
@@ -33,7 +35,9 @@ var require={
     "underscore.string": {
       exports: "_.str"
     },
-    "jquery.sortable": ["jquery"]
+    "jwerty": {
+      exports: "jwerty"
+    }
   },
   map: {
     "*": {
