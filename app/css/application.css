@@ -8,6 +8,10 @@
   height: 25px;
   width: 100px; }
 
+h2 {
+  font-size: 18px;
+  line-height: 15px; }
+
 .factor-list {
   width: 200px; }
 

@@ -10,7 +10,7 @@ define ['coffee!js/jules/events'], (Events) ->
         button {class: 'btn', click: -> timer.stop() }, "Stop"
 
         span refresh -> "#{current_event.get()+1}/#{cycle_length}"
-        span refresh -> "Tempo: #{tempo.get()} bpm"
+        div refresh -> "Tempo: #{tempo.get()} bpm"
 
         button {class: 'btn', click: -> tempo.set(tempo.get()+2) }, "+"
         button {class: 'btn', click: -> tempo.set(tempo.get()-2) }, "-"
