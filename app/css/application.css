@@ -9,8 +9,11 @@
   width: 100px; }
 
 h2 {
-  font-size: 18px;
+  font-size: 15px;
   line-height: 15px; }
+
+#audio-files {
+  display: none; }
 
 .factor-list {
   width: 200px; }

@@ -11,11 +11,15 @@ require(["domReady!",
         "jquery",
         "jwerty",
         "coffee!js/jules/world"], function(doc, $, jwerty, world){
-  jwerty.key("space", world.timer.toggle, world.timer)
+  
+  world = world.create()
 
   console.log("The dom will see you now");
   $('#jules-window').append(world.ui);
   $('.sortable').sortable();
+
+  jwerty.key("space", world.timer.toggle, world.timer);
+
 });
 
 
