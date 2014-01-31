@@ -18,7 +18,8 @@ require(["domReady!",
   $('#jules-window').append(world.ui);
   $('.sortable').sortable();
 
-  jwerty.key("space", world.timer.toggle, world.timer);
+  jwerty.key("space", world.timer.togglePlay, world.timer);
+  jwerty.key("m", world.timer.toggleMute, world.timer);
 
 });
 
