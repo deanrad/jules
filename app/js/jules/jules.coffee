@@ -31,19 +31,14 @@ define [], () ->
         elapsed += evt.duration
 
   # define factors
-  class TreeNode
-    constructor: (value, children) ->
-      @value = rx.cell(value)
-      @children = rx.array(children)
+  class FactorChain
+    constructor: (generator, filters) ->
+      @generator = rx.cell(generator)
+      @filters = rx.array(filters)
 
   factors = rx.array([
-    new TreeNode('R hand', [
-      new TreeNode('double', [])
-      new TreeNode('space 1:2', [])
-      new TreeNode('accent 1:2', [])
-      new TreeNode('shift 2:4', [])
-    ])
-    new TreeNode('Bass Drum', [])
+    new FactorChain("[R]", ["Doubler (1)", "Doubler (2)"])
+    new FactorChain("[L]", ["Space", "Expand", "Shift"])
   ])
 
   # return

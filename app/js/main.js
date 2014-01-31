@@ -16,11 +16,9 @@ require(["domReady!",
   var timer = world.timer;
   var ui    = world.ui;
 
-  window.timer = timer;
   console.log("The dom will see you now");
   $('#jules-window').append(ui);
-  $('.sortable').sortable();
-
+  
   jwerty.key("space", timer.togglePlay, timer);
   jwerty.key("m", timer.toggleMute, timer);
   jwerty.key("↑", timer.incTempo);
