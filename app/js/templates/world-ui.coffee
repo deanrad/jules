@@ -1,5 +1,5 @@
 define ['coffee!js/jules/events'], (Events) ->
-  create: (tempo, timer, current_event, current_cycle, cycle_length) ->
+  create: (timer, current_event, current_cycle, cycle_length) ->
     current_cycle = current_cycle
     refresh = rx.bind
 
@@ -19,10 +19,10 @@ define ['coffee!js/jules/events'], (Events) ->
         ), "Mute"
 
         span refresh -> "#{current_event.get()+1}/#{cycle_length}"
-        div refresh -> "Tempo: #{tempo.get()} bpm"
+        div refresh -> "Tempo: #{timer.tempo.get()} bpm"
 
-        button {class: 'btn', click: -> tempo.set(tempo.get()+2) }, "+"
-        button {class: 'btn', click: -> tempo.set(tempo.get()-2) }, "-"
+        button {class: 'btn', click: -> timer.incTempo() }, "+"
+        button {class: 'btn', click: -> timer.decTempo() }, "-"
 
         # HACK dont add more streams without drying this up !
         div {class: 'current-cycle'}, current_cycle.at(0).map (evt)->

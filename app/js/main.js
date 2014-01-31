@@ -12,14 +12,19 @@ require(["domReady!",
         "jwerty",
         "coffee!js/jules/world"], function(doc, $, jwerty, world){
   
-  world = world.create()
+  var world = world.create();
+  var timer = world.timer;
+  var ui    = world.ui;
 
+  window.timer = timer;
   console.log("The dom will see you now");
-  $('#jules-window').append(world.ui);
+  $('#jules-window').append(ui);
   $('.sortable').sortable();
 
-  jwerty.key("space", world.timer.togglePlay, world.timer);
-  jwerty.key("m", world.timer.toggleMute, world.timer);
+  jwerty.key("space", timer.togglePlay, timer);
+  jwerty.key("m", timer.toggleMute, timer);
+  jwerty.key("↑", timer.incTempo);
+  jwerty.key("↓", timer.decTempo);
 
 });
 
