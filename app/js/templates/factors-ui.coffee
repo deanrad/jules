@@ -8,13 +8,15 @@ define ['jquery'], ($) ->
       h3 'Factors:'
       div {class: 'all-factors'}, all_factors.map (factor) ->
         filters = ul {class: 'factors sortable'}, factor.filters.map (filter) ->
-            li filter
+            li {dblclick: -> factor.filters.remove(filter)}, filter
         
         filters.on('sortupdate', ((e)->
           console.log(new_order(e.target))
-          factor.filters.replace(new_order(e.target))))
+          factor.filters.replace(new_order(e.target))
+        ))
 
-        # when rx updates, the new nodes need to be remade sortable
+        # if we replace all the filters we need to make them sortable again
+        # every time, whereas a splice or push we could just set and forget
         factor.filters.onChange.sub -> filters.sortable()
 
         div [
