@@ -1,5 +1,5 @@
 define ['coffee!js/jules/events'], (Events) ->
-  create: (timer, current_event, current_cycle, cycle_length) ->
+  create: (timer, current_cycle, cycle_length) ->
     current_cycle = current_cycle
     refresh = rx.bind
 
@@ -18,7 +18,7 @@ define ['coffee!js/jules/events'], (Events) ->
           click: -> timer.toggleMute()
         ), "Mute"
 
-        span refresh -> "#{current_event.get()+1}/#{cycle_length}"
+        span refresh -> "#{timer.this_beat.get()+1}/#{cycle_length}"
         div refresh -> "Tempo: #{timer.tempo.get()} bpm"
 
         button {class: 'btn', click: -> timer.incTempo() }, "+"
@@ -29,7 +29,7 @@ define ['coffee!js/jules/events'], (Events) ->
           pwidth = refresh -> evt.duration*100/cycle_length
           event_atts =
             class: refresh -> 
-              Events.classes(evt, current_event.get())
+              Events.classes(evt, timer.this_beat.get())
             style: refresh -> "width: #{pwidth.get()}%"
           div event_atts, refresh -> Events.content(evt)
 
@@ -37,7 +37,7 @@ define ['coffee!js/jules/events'], (Events) ->
           pwidth = refresh -> evt.duration*100/cycle_length
           event_atts =
             class: refresh -> 
-              Events.classes(evt, current_event.get())
+              Events.classes(evt, timer.this_beat.get())
             style: refresh -> "width: #{pwidth.get()}%"
           div event_atts, refresh -> Events.content(evt)
 
