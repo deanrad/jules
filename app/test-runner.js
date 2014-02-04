@@ -8,7 +8,11 @@ var browser_tests = [
   'coffee!js/test/jules/world'
 ]
 
-if(typeof window === "object"){
+function isBrowser(){
+ return (typeof window === "object");
+}
+
+if(isBrowser()){
   all_tests = all_tests.concat(browser_tests);
   rxt.importTags();
 }
@@ -17,7 +21,7 @@ if(typeof window === "object"){
    In node, loading is trickier, and repurposing the config that works for the browser
    with least redundancy is trickier still. Thus this eyebrow-raising loading code.
    Suggestions always welcome :) */
-if(typeof window === "undefined"){
+if(!isBrowser()){
   console.log("Running tests in node");
   var requirejs = require('requirejs');
   var Mocha = require('mocha');
@@ -28,6 +32,10 @@ if(typeof window === "undefined"){
           ? window.expect : require('chai').expect;
 
   var rconfig = require("./js/requirejs-config.js").config;
+
+  //override this to the jquery-less version
+  rconfig.paths['reactive-coffee'] = '';
+
   var node_rjsconf = {
     baseUrl : __dirname,
     nodeRequire : require,
