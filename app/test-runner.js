@@ -2,9 +2,12 @@
 
 /* These tests are the 'dependencies' of mocha.run() and so add yours accordingly */
 var all_tests = [
+  'underscore',
+  'underscore.string',
+  'reactive-coffee',
+  'coffee!js/test/jules/jules'
 ];
 var browser_tests = [
-  'coffee!js/test/jules/jules',
   'coffee!js/test/jules/world'
 ]
 
@@ -34,7 +37,7 @@ if(!isBrowser()){
   var rconfig = require("./js/requirejs-config.js").config;
 
   //override this to the jquery-less version
-  rconfig.paths['reactive-coffee'] = '';
+  rconfig.paths['reactive-coffee'] = 'js/vendor/reactive-nojquery';
 
   var node_rjsconf = {
     baseUrl : __dirname,
