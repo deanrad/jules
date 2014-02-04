@@ -1,4 +1,4 @@
-// for running as node app locally, but mostly for heroku
+// mostly here for easy heroku deploy, you could customize this as needed
 var express = require('express');
 var port = process.env.PORT || 5000;
 var app = express();
