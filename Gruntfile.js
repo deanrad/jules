@@ -24,8 +24,8 @@ module.exports = function(grunt) {
       }
     },
     jshint: {
-      files: ['Gruntfile.js', 'app/js/**/*.js'],
-      ignores: ['app/vendor/reactive-nojquery.js'],
+      files: ['Gruntfile.js', 'app/js/main.js', 'app/js/requirejs-config.js', 'app/test-runner.js'],
+      ignores: ['app/js/vendor/*.js'],
       options: {
         node: true,
         undef: true,
