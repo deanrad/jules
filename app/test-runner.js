@@ -36,9 +36,6 @@ if(!isBrowser()){
 
   var rconfig = require("./js/requirejs-config.js").config;
 
-  //override this to the jquery-less version
-  rconfig.paths['reactive-coffee'] = 'js/vendor/reactive-nojquery';
-
   var node_rjsconf = {
     baseUrl : __dirname,
     nodeRequire : require,
